@@ -22,15 +22,7 @@
 <body>
     <!-- Template -->
     <div id="app">
-        <h3>Identicon Generator</h3>
-        <div>
-            Input:
-            <input type="text" v-on:input="onInput" />
-        </div>
-        <div>
-            Output:
-            <div v-html="identicon"></div>
-        </div>
+        
     </div>
     
 
@@ -57,6 +49,21 @@
                     return jdenticon.toSvg(this.textInput, 200);
                 }
             },
+            //Template can be attached to vue instance and rendered in el
+            template: `
+                <div>
+                    <h3>Identicon Generator</h3>
+                    <div>
+                        Input:
+                        <input type="text" v-on:input="onInput" />
+                    </div>
+                    <div>
+                        Output:
+                        <!-- render string to html -->
+                        <div v-html="identicon"></div>
+                    </div>
+                </div>
+            `
         })    
     </script>    
 </body>
