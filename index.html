@@ -7,6 +7,7 @@
     <title>Identicon Generator</title>
     <!-- vue cdn -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jdenticon@2.1.0"></script>
     <style>
         #app {
             font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -19,6 +20,7 @@
     </style>
 </head>
 <body>
+    <!-- Template -->
     <div id="app">
         <h3>Identicon Generator</h3>
         <div>
@@ -27,19 +29,34 @@
         </div>
         <div>
             Output:
+            <div v-html="identicon"></div>
         </div>
     </div>
     
 
     <script>
+        // Vue instance 
         new Vue({
+            // Element to target
             el: "#app",
+            // define inital state of vue instance - defining property names and property values
+            data: {
+                textInput: "",
+            },
+            // Methods used on target el - what ways the state of the vue instance can change
             methods: {
-                onInput: function () {
-                    console.log('input')
+                onInput: function (e) {
+                    console.log(e.target.value)
+                    // dont need to reference data after it's defined, just the properties
+                    this.textInput = e.target.value;
+                },
+            },
+            // Turn current data in instance to viewable values 
+            computed: {
+                identicon: function() {
+                    return jdenticon.toSvg(this.textInput, 200);
                 }
-            }
-
+            },
         })    
     </script>    
 </body>
