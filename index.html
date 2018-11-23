@@ -9,7 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jdenticon@2.1.0"></script>
     <style>
-        #app {
+        #root {
             font-family: 'Avenir', Helvetica, Arial, sans-serif;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
@@ -51,7 +51,7 @@
             },
             //Template can be attached to vue instance and rendered in el
             template: `
-                <div>
+                <div id="root">
                     <h3>Identicon Generator</h3>
                     <div>
                         Input:
