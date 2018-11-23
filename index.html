@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Identicon Generator</title>
+    <!-- vue cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        #app {
+            font-family: 'Avenir', Helvetica, Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-align: center;
+            color: #2c3e50;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h3>Identicon Generator</h3>
+        <div>
+            Input:
+            <input type="text" v-on:input="onInput" />
+        </div>
+        <div>
+            Output:
+        </div>
+    </div>
+    
+
+    <script>
+        new Vue({
+            el: "#app",
+            methods: {
+                onInput: function () {
+                    console.log('input')
+                }
+            }
+
+        })    
+    </script>    
+</body>
+</html>
